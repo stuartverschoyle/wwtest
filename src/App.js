@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import WWvideo from './components/wwvideo'
+
+import './App.scss';
+
+class App extends Component {
+
+  render() {
+ 
+    return (
+      <BrowserRouter>
+          <div className="App">
+            <Switch>
+              <Route exact path="/">
+                <div className="container">
+                  <h1>Sorry, no videos here!</h1>
+                  <p>Please go to one of the following:</p>
+                  <ul>
+                    <li><Link to="/myvid1">myvid1</Link></li>
+                    <li><Link to="/myvid2">myvid2</Link></li>
+                  </ul>
+                </div>
+              </Route>
+              <Route path="/:id" component={WWvideo} />
+            </Switch>
+        </div>
+      </BrowserRouter>
+
+    );
+  }
 }
 
 export default App;

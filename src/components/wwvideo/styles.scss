@@ -1,0 +1,31 @@
+.ww-container {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    .playButton {
+        position:absolute;
+        height:75px;
+        width:75px;
+        margin-top: -37.5px;
+        margin-left: -37.5px;
+        z-index:2;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.description-container {
+    display:block;
+    width:100%;
+    max-width:700px;
+    padding: 20px;
+    margin:0 auto;
+}
+
+.video-js .vjs-time-control {
+    display: block;
+}
+.video-js .vjs-remaining-time {
+    display: none;
+}
